@@ -13,21 +13,21 @@ CLI.
 1. The [WireGuard for Ubiquiti](https://github.com/WireGuard/wireguard-vyatta-ubnt) project has
 `.deb` releases available on their
 [Releases](https://github.com/WireGuard/wireguard-vyatta-ubnt/releases) page.
-Download the proper `.deb` file for the model router you have.
+Download the proper `.deb` file for the model router you have.   
    `$ curl -s -L -o wireguard.deb
    https://github.com/WireGuard/wireguard-vyatta-ubnt/releases/download/1.0.20200908-1/e50-v2-v1.0.20200908-v1.0.20200827.deb`
-1. Install the package.
+1. Install the package.   
    `$ sudo dpkg -i wireguard.deb`
-1. Test installation by making sure the `wg` CLI was installed.
+1. Test installation by making sure the `wg` CLI was installed.   
    `$ which wg`
 
 ## Generate Keys
 
-1. Generate your private key.
+1. Generate your private key.   
    `$ wg genkey > /config/auth/wg.key`
-1. Generate your public key.
+1. Generate your public key.   
    `$ cat /config/auth/wg.key | wg pubkey > /config/user-data/wg.public`
-1. Set permissions on the private key.
+1. Set permissions on the private key.   
    `$ chmod 0600 /config/auth/wg.key`
    `$ chown root /config/auth/wg.key`
 
@@ -99,13 +99,13 @@ ${PEER_HOSTNAME}:51820`
 
 ## Check the VPN status
 
-1. `sudo wg`
+1. `sudo wg`   
    This should show the remote/peer connections, with non-zero values going both
    ways under the `transfer:` line.
 1. Try using `ping` on local Private and VPN addresses, and remote VPN and
 Private addresses. You may need to adjust your routing table by adding the VPN
 address for each remote/peer connection (`${PEER_ADDRESS}` here is *not* a CIDR,
-it's just an IP address):
+it's just an IP address):   
    `ip route add ${PEER_ADDRESS} dev wg0 scope link`
 1. Try using `ping` on an address that's on the remote/peer network (ie, not the
 remote/peer router itself, but a machine that's behind it).
