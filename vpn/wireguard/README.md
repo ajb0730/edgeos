@@ -28,7 +28,7 @@ Download the proper `.deb` file for the model router you have.
 1. Generate your public key.   
    `$ cat /config/auth/wg.key | wg pubkey > /config/user-data/wg.public`
 1. Set permissions on the private key.   
-   `$ chmod 0600 /config/auth/wg.key`
+   `$ chmod 0600 /config/auth/wg.key`   
    `$ chown root /config/auth/wg.key`
 
 ## Allow WireGuard through the firewall
