@@ -10,7 +10,7 @@ CLI.
 
 ## Install Wireguard
 
-1. The [WireGuard for Ubiquiti](WireGuard/wireguard-vyatta-ubnt) project has
+1. The [WireGuard for Ubiquiti](https://github.com/WireGuard/wireguard-vyatta-ubnt) project has
 `.deb` releases available on their
 [Releases](https://github.com/WireGuard/wireguard-vyatta-ubnt/releases) page.
 Download the proper `.deb` file for the model router you have.
